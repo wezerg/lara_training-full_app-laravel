@@ -7,6 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Initialisation
+
+Etape à suivre pour initialiser le projet en local :
+- Création d'une base de donnée au nom suivant : 
+- Utilisation de la commande "php artisan migrate"
+- Si vous souhaitez remplir la base de données avec des données exemple, utilisez la commande suivante : "php artisan db:seed"
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
