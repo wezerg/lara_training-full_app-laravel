@@ -15,7 +15,12 @@ class CreateTableChapter extends Migration
     {
         Schema::create('chapter', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->float('time');
+            $table->text('content');
             $table->timestamps();
+            $table->unsignedBigInteger('trainingId')->index();
+            $table->foreign('trainingId')->references('id')->on('training')->onDelete('CASCADE');
         });
     }
 

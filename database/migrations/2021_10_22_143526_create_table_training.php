@@ -15,7 +15,15 @@ class CreateTableTraining extends Migration
     {
         Schema::create('training', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->float('price');
+            $table->string('image')->nullable();
             $table->timestamps();
+            $table->unsignedBigInteger('userId')->index()->nullable();
+            $table->unsignedBigInteger('typeId')->index()->nullable();
+            $table->foreign('userId')->references('id')->on('user')->onDelete('set null');
+            $table->foreign('typeId')->references('id')->on('type')->onDelete('set null');
         });
     }
 

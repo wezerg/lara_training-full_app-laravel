@@ -15,7 +15,7 @@ class CreateTableType extends Migration
     {
         Schema::create('type', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
         });
     }
 
