@@ -8,11 +8,11 @@
         <form action="{{route('login')}}" method="POST">
             @csrf
             <div class="col-12 form-group">
-                <label for="">Email</label>
+                <label for="">Email<span style="color: red">*</span></label>
                 <input type="text" class="form-control" name="email" placeholder="exemple@exemple.com" id="">
             </div>
             <div class="col-12 form-group">
-                <label for="">Password</label>
+                <label for="">Password<span style="color: red">*</span></label>
                 <input type="password" class="form-control" name="password" id="">
             </div>
             @if ($errors->any())

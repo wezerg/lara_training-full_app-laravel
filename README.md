@@ -20,6 +20,7 @@ Etape à suivre pour initialiser le projet en local :
 - Ouvrir un terminal dans votre dossier projet.
 - Exécuté la commande ```composer install``` pour récupérer les dépendances utilisées.
 - Si un fichier ".env" ne sait pas créer automatiquement, copier le fichier ".env.example" (sans oublié de le renommer) puis exécutez la commande suivante : ```php artisan key:generate```.
+- Pour rattacher votre service de mail de test, modifier les champs ```MAIL_MAILER=, MAIL_HOST=, MAIL_PORT=, MAIL_USERNAME=, MAIL_PASSWORD=, MAIL_ENCRYPTION=,``` du fichier ".env".
 - Création d'une base de donnée au nom suivant : laravel_training.
 - N'oubliez pas de mettre le nom de la base de données dans le champs ```DB_DATABASE=``` de votre fichier ".env" ainsi que votre configuration MySql.
 - Utilisation de la commande ```php artisan migrate``` pour créer la base de données.

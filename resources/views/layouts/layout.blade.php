@@ -47,8 +47,14 @@
                 </form>
             @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}">Login</a>
+                    <a class="nav-link" href="{{route('contactView')}}">Contact</a>
                 </li>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <li class="nav-item">
+                        <button class="btn btn-success btn-sm" href="{{route('login')}}">Login</button>
+                    </li>
+                </form>
             @endif
           </div>
         </div>
