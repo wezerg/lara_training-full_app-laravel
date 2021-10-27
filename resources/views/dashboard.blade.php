@@ -1,17 +1,62 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+@extends('layouts.layout')
+@section('titlePage')
+    Accueil
+@endsection
+@section('content')
+    <h1>Bienvenue sur le dashboard admin</h1>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-12 px-4">
+            <h2>Listes des utilisateurs</h2>
+            @foreach ($usersActive as $user)
+                <div class="row bg-light my-2 p-3 align-items-center">
+                    <div class="col-3">
+                        <p class="mb-0">{{$user->name}}</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="mb-0">{{$user->firstname}}</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="mb-0">{{$user->email}}</p>
+                    </div>
+                    <div class="col-3 text-end">
+                        <form action="{{route('removeUser', $user->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            @endforeach
+        </div>
+        <div class="col-lg-6 col-12 px-4">
+            <h2>Liste des demandes d'adhésion</h2>
+            @foreach ($usersInactive as $user)
+                <div class="row bg-light my-2 p-3 align-items-center">
+                    <div class="col-2">
+                        <p class="mb-0">{{$user->name}}</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="mb-0">{{$user->firstname}}</p>
+                    </div>
+                    <div class="col-2">
+                        <p class="mb-0">{{$user->email}}</p>
+                    </div>
+                    <div class="col-3 text-end">
+                        <form action="{{route('validUser', $user->id)}}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-success">Accepter</button>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                        <form action="{{route('removeUser', $user->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Refuser</button>
+                        </form>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
-</x-app-layout>
+@endsection

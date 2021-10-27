@@ -19,6 +19,14 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{{route('trainingListView')}}">Accueil</a>
               </li>
+              @if (Auth::user())
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{route('myTrainView')}}">Mes formations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{{route('profileView')}}">Mon profil</a>
+                </li>
+              @endif
               {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
@@ -39,6 +47,11 @@
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form> --}}
             @if (Auth::user())
+                @if (Auth::user()->role === 'Admin')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('dashboardView')}}">Dashboard</a>
+                </li>
+                @endif
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <li class="nav-item">

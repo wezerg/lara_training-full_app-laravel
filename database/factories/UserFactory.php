@@ -24,9 +24,10 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'firstname' => $this->faker->firstName(),
+            'firstname' => $this->faker->name(),
             'email' => 'admin@admin.com',
             'role' => 'Admin',
+            'activate' => true,
             'email_verified_at' => now(),
             'password' => '$2a$12$UzVox6mqomOrboD2sgjT7.I58i0Fon5jHWZi.ovk1iDhHhFAMZykq', // admin
             'remember_token' => Str::random(10),

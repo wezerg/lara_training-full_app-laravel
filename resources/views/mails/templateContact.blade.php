@@ -4,7 +4,5 @@ Vous avez reçu une nouvelle demande d'adhésion.
 Nom : {{$name}} <br/>
 Prénom : {{$firstname}} <br/>
 Email : {{$email}}
-<form action="https://localhost:8000/valid/user/{{$name}}">
-    @csrf
-    <a href="localhost:8000/valid/user/nlop" class="btn btn-primary">Accepter</a>
-</form>
+<br/>
+<a href="localhost:8000/dashboard" class="btn btn-primary">Accédez au dashboard</a>

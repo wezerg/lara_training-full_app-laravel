@@ -25,7 +25,7 @@ class TrainingFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence,
-            'description' => $this->faker->sentence(100),
+            'description' => $this->faker->sentence(50),
             'price' => $this->faker->randomFloat(null, 0, 1000),
             'userId' => User::all()->random()->id,
             'typeId' => Type::all()->random()->id
