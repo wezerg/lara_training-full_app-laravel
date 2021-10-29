@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Type;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class TypeFactory extends Factory
 {
@@ -22,7 +23,7 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence
+            'name' => Str::random(8)
         ];
     }
 }

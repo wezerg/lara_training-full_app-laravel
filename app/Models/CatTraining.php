@@ -11,5 +11,5 @@ class CatTraining extends Model
 
     protected $table = 'cat_training';
     public $timestamps = false;
-    protected $fillable = [];
+    protected $fillable = ['categoryId', 'trainingId'];
 }

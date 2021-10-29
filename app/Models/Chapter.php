@@ -9,5 +9,5 @@ class Chapter extends Model
 {
     use HasFactory;
     protected $table = 'chapter';
-    protected $fillable = ['name', 'time', 'content'];
+    protected $fillable = ['name', 'time', 'content', 'trainingId'];
 }

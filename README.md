@@ -7,6 +7,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Définition du projet
+Ce projet à pour but de créer une plateforme de formations en ligne. Les visiteurs du site peuvent consulter en libre accès les formations ainsi que leurs détails.
+Si un visiteur le souhaite, il peut envoyer un formulaire de contact pour devenir formateur. L'administrateur du site pourra accepter la demande de l'utilisateur via un dashboard. Enfin l'utilisateur enregistré pourra facilement créer des formations composés de chapitre, de catégorie, de type, etc... L'utilisateur peut a tous moment supprimer ou modifier les formations qu'il a mis en ligne.
+
+
 ## Pré-requis
 
 Etapes à suivre pour installer le projet en local : 
@@ -29,6 +34,14 @@ Etape à suivre pour initialiser le projet en local :
 ## Lancement
 
 - Exécuté la commande ```php artisan serve``` pour démarrer l'application.
+
+
+## Documentation technique
+
+- MCD : disponible dans le dossier bdd_model au format .png ou .mcd
+
+<img src="bdd_model/mcd.png" alt="MCD_Image">
+
 
 
 

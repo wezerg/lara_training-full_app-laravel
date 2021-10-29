@@ -9,7 +9,7 @@ class Training extends Model
 {
     use HasFactory;
     protected $table = 'training';
-    protected $fillable = ['name', 'description', 'price', 'image'];
+    protected $fillable = ['name', 'description', 'price', 'image', 'typeId', 'userId'];
 
     public function getOwner(){
         return $this->hasOne(User::class, 'id', 'userId');
